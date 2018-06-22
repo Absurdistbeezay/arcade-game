@@ -25,8 +25,15 @@ Enemy.prototype.update = function(dt) {
     //condition for off the canvas sprites
     if(this.x > 500){
         this.x = -50;
+        this.speed = 100 + Math.floor(Math.random()*222);
     }
-};
+
+    //if player and enemies collide
+    if(player.x < this.x + 80 && player.x + 80>this.x && player.y < this.y + 60 && 60 + player.y > this.y) {
+        player.x = 202;
+        player.y = 405;  
+    }
+}
 
 // Draw the enemy on the screen, required method for game
 Enemy.prototype.render = function() {
@@ -55,8 +62,12 @@ Player.prototype.render = function (){
 }
 
 Player.prototype.handleInput = function (pressedKey){
-
 }
+
+
+// all enemies
+let allEnemies = [];
+
 
 
 
