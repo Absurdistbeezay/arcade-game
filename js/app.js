@@ -25,14 +25,13 @@ Enemy.prototype.update = function(dt) {
     //condition for off the canvas sprites
     if(this.x > 500){
         this.x = -50;
-        this.speed = 100 + Math.floor(Math.random()*220);
+        this.speed = 100 + Math.floor(Math.random()*200);
     }
 
     //if player and enemies collide
-    if(player.x < this.x + 80 && player.x + 80>this.x && player.y < this.y + 60 && 60 + player.y > this.y) {
+    if(player.x < this.x + 80 && player.x + 80 > this.x && player.y < this.y + 60 && 60 + player.y > this.y) {
         player.x = 200;
-    4
-    player.y = 400;  
+        player.y = 400;  
     }
 }
 
@@ -73,14 +72,14 @@ Player.prototype.handleInput = function (pressedKey){
     if(pressedKey === 'up' && this.y > 0){
         this.y -= 80;
     }
-    if(pressedKey === 'down' && this.y < 405){
+    if(pressedKey === 'down' && this.y < 400){
         this.y +=80
     }
     if(this.y < 0){
         setTimeout(()=>{
             this.x = 200;
             this.y = 400;
-        }, 1000);
+        }, 500);
     }
 
 }
