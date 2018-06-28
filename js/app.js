@@ -64,22 +64,22 @@ Player.prototype.render = function (){
 Player.prototype.handleInput = function (pressedKey){
 
     if(pressedKey === 'left' && this.x > 0){
-        this.x -= 100;
+        this.x -= 101;
     }
     if(pressedKey === 'right' && this.x < 400){
-        this.x += 100;
+        this.x += 101;
     }
     if(pressedKey === 'up' && this.y > 0){
-        this.y -= 80;
+        this.y -= 84.16;
     }
     if(pressedKey === 'down' && this.y < 400){
-        this.y +=80
+        this.y +=84.16
     }
     if(this.y < 0){
         setTimeout(()=>{
             this.x = 200;
             this.y = 400;
-        }, 500);
+        }, 200);
     }
 
 }
